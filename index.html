@@ -1,492 +1,577 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>STOC | US Medspa Acquisition Opportunities</title>
+  <title>STOC | US MedSpa Acquisition Opportunities</title>
   <style>
-    body { font-family: Arial, sans-serif; color:#222; margin:40px; line-height:1.4; }
-    h1,h2,h3 { font-weight:600; color:#111; }
-    h1 { font-size:32px; margin-bottom:10px; }
-    h2 { font-size:24px; margin-top:30px; margin-bottom:10px; }
-    h3 { font-size:18px; margin-top:20px; margin-bottom:6px; }
-    .page { page-break-after: always; }
-    .subtitle { font-size:18px; color:#555; margin-bottom:20px; }
-    .section-title { font-size:20px; font-weight:600; margin-top:20px; margin-bottom:8px; }
-    .kpi-row { display:flex; gap:24px; margin:18px 0; }
-    .kpi { flex:1; padding:14px; border:1px solid #ddd; border-radius:6px; background:#fafafa; }
-    .kpi-label { font-size:12px; text-transform:uppercase; color:#777; }
-    .kpi-value { font-size:20px; font-weight:bold; margin-top:4px; }
-    .kpi-note { font-size:11px; color:#888; margin-top:4px; }
-    ul { margin:6px 0 10px 18px; }
-    li { margin-bottom:4px; }
-    .two-col { display:flex; gap:32px; }
-    .col { flex:1; }
-    .chart { border:1px solid #ddd; border-radius:6px; padding:10px 12px; margin:14px 0; background:#fafafa; font-size:13px; }
-    .chart-title { font-weight:600; margin-bottom:4px; }
-    .chart-caption { font-size:11px; color:#777; margin-top:4px; }
-    .pill { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; background:#eef2ff; color:#334; margin-right:4px; }
-    .value-bridge { font-size:13px; margin:6px 0 10px 0; }
-    table { border-collapse:collapse; width:100%; margin:10px 0; font-size:13px; }
-    th, td { border:1px solid #ddd; padding:6px 8px; text-align:left; }
-    th { background:#f3f3f3; }
-    .footer { font-size:10px; color:#999; margin-top:20px; }
-    .logo { font-weight:bold; letter-spacing:0.08em; font-size:14px; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #1b1f23;
+      background-color: #f5f7fa;
+    }
+    .page {
+      width: 1024px;
+      height: 576px; /* 16:9 slide */
+      box-sizing: border-box;
+      padding: 40px 50px;
+      margin: 0 auto 20px auto;
+      background-color: #ffffff;
+      page-break-after: always;
+      position: relative;
+    }
+    h1, h2, h3, h4 {
+      margin: 0 0 10px 0;
+      font-weight: 600;
+    }
+    h1 { font-size: 32px; }
+    h2 { font-size: 22px; color: #004b7c; }
+    h3 { font-size: 18px; color: #004b7c; }
+    p {
+      margin: 6px 0;
+      line-height: 1.4;
+      font-size: 14px;
+    }
+    ul, ol {
+      margin: 6px 0 6px 18px;
+      padding: 0;
+      font-size: 14px;
+    }
+    li {
+      margin: 3px 0;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: #5a646e;
+      margin-bottom: 20px;
+    }
+    .layout-2col {
+      display: flex;
+      gap: 40px;
+      margin-top: 10px;
+    }
+    .col {
+      flex: 1;
+    }
+    .tagline {
+      font-size: 16px;
+      color: #004b7c;
+      margin-top: 8px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background-color: #e7f1fb;
+      color: #004b7c;
+      font-size: 11px;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+    .chart-box {
+      border: 1px solid #dde3eb;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin: 8px 0;
+      font-size: 12px;
+      color: #5a646e;
+      background: linear-gradient(135deg, #f7f9fc, #ffffff);
+    }
+    .chart-title {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: #004b7c;
+    }
+    .metric-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .metric {
+      flex: 1 1 140px;
+      border-radius: 6px;
+      background-color: #f7f9fc;
+      padding: 8px 10px;
+      border: 1px solid #e1e7f0;
+    }
+    .metric-label {
+      font-size: 11px;
+      color: #6c7682;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .metric-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1b1f23;
+      margin-top: 3px;
+    }
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      right: 50px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #9aa3b0;
+      border-top: 1px solid #eef1f6;
+      padding-top: 8px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      border: 1px solid #d1d9e6;
+      color: #4a5563;
+      background-color: #f8fafc;
+      margin-right: 6px;
+    }
+    .callout {
+      border-left: 3px solid #f59e0b;
+      padding-left: 10px;
+      margin: 10px 0;
+      font-size: 13px;
+      color: #4b5563;
+    }
+    .value-bridge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .bridge-step {
+      padding: 6px 10px;
+      border-radius: 6px;
+      background-color: #f3f4ff;
+      border: 1px solid #d5dbff;
+      min-width: 120px;
+      text-align: center;
+    }
+    .bridge-arrow {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+    .table th, .table td {
+      border: 1px solid #e1e7f0;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    .table th {
+      background-color: #f7f9fc;
+      font-weight: 600;
+      color: #4b5563;
+    }
+    .pill-green {
+      background-color: #e6f6ed;
+      color: #166534;
+    }
+    .pill-red {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .highlight {
+      color: #10b981;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
 
-<!-- PAGE 1: EXECUTIVE SUMMARY -->
+<!-- PAGE 1: Cover + Exec Summary -->
 <div class="page">
-  <div class="logo">STOC</div>
-  <h1>US Medspa Acquisition Opportunities</h1>
-  <div class="subtitle">Building proprietary sourcing and underwriting edge in a fragmented, high‑growth market</div>
+  <h1>US MedSpa Acquisition Opportunities</h1>
+  <p class="subtitle">A data‑driven sourcing and underwriting engine for private equity medspa platforms</p>
+  <p class="tagline">Prepared by STOC · Medspa Market Intelligence & Deal Origination</p>
 
-  <div class="section-title">Executive summary</div>
-  <ul>
-    <li>The global medical spa market is projected to reach approximately <b>$23.4B</b> by 2026, compounding at roughly low‑teens growth, driven by minimally invasive aesthetics and wellness demand.[web:17][web:19]</li>
-    <li>The US medspa landscape remains highly fragmented, with an estimated ~10,000+ locations and ~80–90% operated as single‑site or non‑institutional platforms, creating significant consolidation white space.[web:7][web:21][web:26][web:33]</li>
-    <li>Private equity participation is growing but still early: only a small minority of medspas are PE‑backed, despite attractive cash‑pay, recurring revenue and replicable site‑rollout characteristics.[web:10][web:26][web:31][web:33]</li>
-    <li>Traditional deal flow is narrow and reactive, with limited visibility into off‑market operators’ clinical, staffing and digital performance — creating blind spots in valuation and platform selection.[web:7][web:10][web:26][web:33]</li>
-    <li>STOC builds an asset‑level, data‑rich view of the US medspa universe, scoring clinics on services, staff, MD coverage and digital signals to identify scalable platforms and high‑ROI tuck‑ins earlier.</li>
-  </ul>
+  <div class="layout-2col" style="margin-top: 30px;">
+    <div class="col">
+      <h2>Executive summary</h2>
+      <ul>
+        <li>Global medical spa market projected to reach approximately <strong>$23.42B</strong> by 2026, driven by non‑invasive aesthetics adoption and aging demographics.[web:17][web:19]</li>
+        <li>US medspa market remains highly fragmented, with an estimated ~90% of locations independent or non‑institutionally backed, creating a robust roll‑up and platform‑build opportunity.[web:33]</li>
+        <li>Private equity interest is accelerating as investors pursue scalable, cash‑pay, high‑margin concepts with replicable playbooks across multiple metropolitan clusters.[web:33][web:34][web:39]</li>
+        <li>STOC’s **proprietary** data asset finds, enriches, and prioritizes medspas using real‑time digital signals (web quality, Instagram traction, staffing, MD coverage) to create differentiated deal flow.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Key questions this deck answers</h3>
+      <ul>
+        <li>Where is the medspa market heading, and how large is the investable opportunity in the US?</li>
+        <li>How fragmented is the landscape, and what dynamics support platform + tuck‑in strategies?</li>
+        <li>Which medspas exhibit “PE‑ready” signals across digital presence, capacity, and clinical sophistication?</li>
+        <li>How does STOC de‑risk origination by providing PE‑grade, bottom‑up visibility into individual medspas?</li>
+      </ul>
 
-  <div class="kpi-row">
-    <div class="kpi">
-      <div class="kpi-label">Market projection 2026 (global)</div>
-      <div class="kpi-value">$23.42B</div>
-      <div class="kpi-note">Global medical spa market value by 2026.[web:17][web:19]</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">US locations (2023)</div>
-      <div class="kpi-value">~10.5k</div>
-      <div class="kpi-note">US medspa locations, majority independent operators.[web:21][web:26][web:30]</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Independent / non‑institutional</div>
-      <div class="kpi-value">~80–90%</div>
-      <div class="kpi-note">Limited PE penetration, early‑stage consolidation.[web:7][web:26][web:33]</div>
+      <div class="metric-grid">
+        <div class="metric">
+          <div class="metric-label">Global market 2026</div>
+          <div class="metric-value">$23.4B</div>
+          <p style="font-size:11px;color:#6b7280;">Projection across medical spa services.[web:17][web:19]</p>
+        </div>
+        <div class="metric">
+          <div class="metric-label">US share (est.)</div>
+          <div class="metric-value">~30–35%</div>
+          <p style="font-size:11px;color:#6b7280;">US as leading region in medspa revenues.[web:23][web:20]</p>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Independently owned</div>
+          <div class="metric-value">~90%</div>
+          <p style="font-size:11px;color:#6b7280;">Estimated medspas without institutional capital.[web:33]</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="section-title">Investor “so what”</div>
-  <ul>
-    <li>Attractive roll‑up dynamics: recurring cash‑pay revenue, strong consumer tailwinds and a long tail of under‑optimized clinics create a favorable backdrop for platform plus tuck‑in strategies.[web:10][web:18][web:31][web:33]</li>
-    <li>Edge from data: STOC’s enriched medspa universe enables differentiated sourcing, sharper underwriting and targeted value‑creation plans at the asset level.</li>
-  </ul>
-
-  <div class="footer">Confidential – prepared by STOC for institutional investors</div>
+  <div class="footer">
+    <span>STOC | Confidential – for discussion with qualified investors only</span>
+    <span>1</span>
+  </div>
 </div>
 
-<!-- PAGE 2: MARKET OVERVIEW -->
+<!-- PAGE 2: PE Investment Context -->
 <div class="page">
-  <div class="logo">STOC</div>
-  <h2>1. Market overview</h2>
+  <h2>Why medspas attract private equity</h2>
+  <p class="subtitle">Structural growth, cash‑pay revenues, and roll‑up potential align tightly with PE value creation models</p>
 
-  <div class="section-title">Growth and resilience</div>
-  <div class="two-col">
+  <div class="layout-2col">
     <div class="col">
-      <div class="chart">
-        <div class="chart-title">Exhibit 1 – Global medical spa market, 2021–2026E</div>
+      <h3>Core investment thesis</h3>
+      <ul>
+        <li>Secular growth: Demand for minimally invasive aesthetic procedures continues to expand, supported by rising consumer acceptance and technology innovation.[web:18][web:23]</li>
+        <li>Attractive economics: Medspas typically exhibit high gross margins, recurring treatment cycles, and strong pre‑booking dynamics, supporting stable cash flows.[web:34][web:39]</li>
+        <li>Cash‑pay model: Limited dependence on payors reduces reimbursement risk and simplifies revenue recognition while enabling premium pricing for differentiated providers.[web:33][web:10]</li>
+        <li>Replication playbook: Proven ability to scale multi‑site footprints with common branding, shared protocols, and centralized marketing & operations.[web:34][web:39]</li>
+      </ul>
+
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 1 – Simplified PE value‑creation bridge (illustrative)</div>
         <div class="value-bridge">
-          2021 &rarr; 2022 &rarr; 2023E &rarr; 2026E<br/>
-          Approx. low‑teens CAGR, reaching ~$23.4B by 2026.[web:17][web:19]
+          <div class="bridge-step">Entry EBITDA<br/>$X per location</div>
+          <div class="bridge-arrow">➜</div>
+          <div class="bridge-step">Same‑store growth<br/>+Y%</div>
+          <div class="bridge-arrow">➜</div>
+          <div class="bridge-step">Network expansion<br/>+N locations</div>
+          <div class="bridge-arrow">➜</div>
+          <div class="bridge-step">Multiple expansion<br/>+turns</div>
         </div>
-        <div class="chart-caption">
-          Note: Stylized bar chart; values indicative based on global market projections.[web:17][web:19]
+        <p>Illustrative bridge showing typical PE levers: SSS growth, density build‑out, and multiple expansion via platform scale.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Current PE activity</h3>
+      <ul>
+        <li>Multiple PE‑backed consolidators (e.g., Advanced MedAesthetic Partners, MedSpa Partners, Aesthetic Partners) have built multi‑state networks through acquisition and de novo expansion.[web:39][web:10]</li>
+        <li>Sector remains early‑stage in consolidation versus dental, vet, and dermatology, with significant white space across Tier‑2 and Tier‑3 MSAs.[web:33][web:39]</li>
+        <li>PE investors are increasingly focused on digital presence, clinical governance, and scalability when underwriting new platforms or add‑ons.[web:34][web:39]</li>
+      </ul>
+
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 2 – Medspa vs other healthcare services (illustrative)</div>
+        <p>Bar chart concept: compares medspas to vet, dental, derm on fragmentation, cash‑pay %, and penetration of PE ownership.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>STOC | US MedSpa Acquisition Opportunities</span>
+    <span>2</span>
+  </div>
+</div>
+
+<!-- PAGE 3: Market Size & Growth -->
+<div class="page">
+  <h2>Market size and growth outlook</h2>
+  <p class="subtitle">Large and growing global market with the US as a leading profit pool</p>
+
+  <div class="layout-2col">
+    <div class="col">
+      <h3>Global and US market</h3>
+      <ul>
+        <li>Global medical spa market projected to reach roughly $23.42B in 2026, growing at ~13% CAGR from early 2020s levels.[web:17][web:19][web:25]</li>
+        <li>Global projections toward ~USD 97.9B by 2035 illustrate sustained double‑digit growth over the next decade.[web:23]</li>
+        <li>US medspa market is one of the largest regional contributors, with estimates in the mid‑single‑digit billions today and strong forecast growth into the 2030s.[web:20][web:23][web:37]</li>
+      </ul>
+
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 3 – Global medspa market projection (illustrative)</div>
+        <p>Line chart concept: 2020E–2035E global market rising from low double‑digit billions to ~USD 90–100B; call‑out at 2026 showing ~$23.4B.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Growth drivers</h3>
+      <ul>
+        <li>Shift toward non‑invasive, low‑downtime procedures and preventive aesthetics, appealing to younger cohorts and men as well as traditional core segments.[web:18][web:23]</li>
+        <li>Technological innovation in laser, RF, injectables, and body contouring broadens indications and enhances perceived value.[web:18][web:25]</li>
+        <li>Rising wellness and self‑care spending, with medspas increasingly bundling memberships, subscriptions, and adjunct services.[web:18][web:34]</li>
+      </ul>
+
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 4 – Illustrative spend per capita curve</div>
+        <p>Area chart concept: increasing aesthetics and wellness spend per capita over time, with medspas capturing a rising share vs. salons/traditional spas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Market size figures to be replaced with sponsor‑specific base case, downside, and upside scenarios.</span>
+    <span>3</span>
+  </div>
+</div>
+
+<!-- PAGE 4: Fragmentation & White Space -->
+<div class="page">
+  <h2>Highly fragmented landscape with roll‑up potential</h2>
+  <p class="subtitle">Most US medspas are independent, sub‑scale, and under‑optimized digitally—ideal for platform & tuck‑in strategies</p>
+
+  <div class="layout-2col">
+    <div class="col">
+      <h3>Fragmentation overview</h3>
+      <ul>
+        <li>Medspa market is described as “highly fragmented,” with an estimated ~90% of clinics not associated with institutional capital.[web:33]</li>
+        <li>Local operators often range from single‑site owner‑operators to small 2–5 unit clusters with limited centralized capabilities.[web:33][web:39]</li>
+        <li>Few scaled brands have achieved national awareness, leaving room for new platform brands to emerge across major MSAs.[web:34][web:39]</li>
+      </ul>
+
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 5 – Ownership structure (illustrative)</div>
+        <p>Pie chart concept: ~90% independent, ~7% small regional groups, ~3% PE‑backed platforms.</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>White space and consolidation thesis</h3>
+      <ul>
+        <li>Attractive consolidation dynamics similar to early‑stage phases of dental and vet roll‑ups, but with higher cash‑pay exposure and more discretionary revenue.[web:33][web:39]</li>
+        <li>Opportunity to deploy playbooks across branding, pricing, labor model, and digital funnel optimization to uplift unit economics post‑acquisition.[web:34][web:39]</li>
+        <li>Room for regional density builds in Sunbelt, coastal, and high‑income suburban markets where independent medspas dominate the landscape.[web:37][web:18]</li>
+      </ul>
+
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 6 – Fragmentation vs. PE penetration by region (illustrative)</div>
+        <p>Heatmap concept: US map shaded by medspa density; overlay icons for PE‑backed platforms, highlighting multiple “white space” MSAs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>STOC | Fragmentation and roll‑up thesis</span>
+    <span>4</span>
+  </div>
+</div>
+
+<!-- PAGE 5: Key gaps for PE investors -->
+<div class="page">
+  <h2>Current gaps in PE medspa sourcing and underwriting</h2>
+  <p class="subtitle">Deal teams see growth, but lack granular, comparable data at the individual medspa level</p>
+
+  <div class="layout-2col">
+    <div class="col">
+      <h3>Sourcing & screening challenges</h3>
+      <ul>
+        <li>Limited visibility into the full universe of US medspas, especially smaller operators without robust SEO or marketplace listings.</li>
+        <li>Manual, relationship‑driven sourcing makes it difficult to systematically identify “hidden gem” targets in secondary and tertiary markets.</li>
+        <li>Lack of standardized, comparable metrics on digital presence, patient volume proxies, and provider mix at the top of the funnel.</li>
+      </ul>
+
+      <div class="callout">
+        PE teams are forced to make early screening decisions using partial information (name, location, rough size) instead of a holistic, data‑driven profile.
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Underwriting & value‑creation blind spots</h3>
+      <ul>
+        <li>Digital performance (website health, online reviews, social media traction) is inconsistently measured despite being central to patient acquisition.</li>
+        <li>Limited data on staffing leverage (RNs, NPs, MD medical oversight) and service mix, which drives capacity and regulatory risk.</li>
+        <li>Difficulty segmenting targets into archetypes (premium brand, volume discounter, membership‑driven, single‑injector shop) with distinct post‑close playbooks.</li>
+      </ul>
+
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 7 – Where current PE view is “thin” (illustrative)</div>
+        <p>Diagram concept: funnel from “Universe of clinics” → “Targets contacted” → “LOI” → “Closed”; overlay in red where data is currently missing or subjective.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Gaps define where STOC’s data advantage matters most.</span>
+    <span>5</span>
+  </div>
+</div>
+
+<!-- PAGE 6: STOC value proposition -->
+<div class="page">
+  <h2>STOC: A proprietary medspa intelligence and origination engine</h2>
+  <p class="subtitle">From fragmented online traces to a ranked list of investable medspa targets</p>
+
+  <div class="layout-2col">
+    <div class="col">
+      <h3>What STOC does</h3>
+      <ul>
+        <li>Systematically identifies the full universe of US medspas across web, social, and third‑party data sources.</li>
+        <li>Enriches each location with standardized, comparable attributes across digital, clinical, and operational dimensions.</li>
+        <li>Generates PE‑grade scoring and segmentation to prioritize high‑value platforms and add‑ons by region and thesis.</li>
+      </ul>
+
+      <h3>Example attributes STOC tracks</h3>
+      <div class="metric-grid">
+        <div class="metric">
+          <div class="metric-label">Digital</div>
+          <div class="metric-value">Web, IG</div>
+          <p style="font-size:11px;">Site quality, SEO, traffic, IG followers, engagement rate, rating volume.</p>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Clinical</div>
+          <div class="metric-value">MD, RNs</div>
+          <p style="font-size:11px;">Medical director presence, provider count, advanced procedures offered.</p>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Scale</div>
+          <div class="metric-value">1–N sites</div>
+          <p style="font-size:11px;">Location count, square footage proxy, service breadth.</p>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Brand</div>
+          <div class="metric-value">Reputation</div>
+          <p style="font-size:11px;">Review scores, review velocity, content quality, local rank.</p>
         </div>
       </div>
     </div>
+
     <div class="col">
+      <h3>How STOC helps PE investors</h3>
       <ul>
-        <li>The medical spa category has expanded rapidly as minimally invasive procedures and wellness‑oriented services gain mainstream acceptance.[web:16][web:17][web:18][web:32]</li>
-        <li>Global market estimates converge around low‑ to mid‑teens annual growth through 2026, supported by aging demographics, social‑media‑driven aesthetics and increasing male participation.[web:16][web:17][web:19][web:32]</li>
-        <li>Industry revenues are expected to climb from the high teens/low‑20s billions to roughly <b>$23.4B+ by 2026</b>, with upside under more aggressive adoption scenarios.[web:17][web:19]</li>
+        <li>Shortens time from “market of interest” to curated list of high‑potential targets, segmented by platform vs. tuck‑in suitability.</li>
+        <li>Provides quantified, comparable digital and clinical scores to support early investment committee discussions.</li>
+        <li>Surfaces thematic thesis angles (e.g., injectables‑heavy, body‑contouring‑led, men’s aesthetics, membership models) grounded in data, not anecdotes.</li>
       </ul>
-    </div>
-  </div>
 
-  <div class="section-title">US medspa context</div>
-  <ul>
-    <li>The US accounts for a significant share of global medical spa revenues and is projected to remain the largest regional market, with double‑digit growth through the decade.[web:20][web:23][web:25]</li>
-    <li>Recent analyses indicate US medical spa revenues in the mid‑single‑digit billions, with forecasts suggesting several‑fold expansion over the next 10–15 years.[web:20][web:23][web:25]</li>
-    <li>Beyond medspas, broader medical aesthetics (devices, injectables, surgeries) exceeds $25B in consumer spend in the US alone, underscoring the depth of the demand pool.[web:31]</li>
-  </ul>
-
-  <div class="chart">
-    <div class="chart-title">Exhibit 2 – US medical spa vs broader medical aesthetics</div>
-    <ul>
-      <li>Bar 1: US medspa revenues (mid‑single‑digit billions).</li>
-      <li>Bar 2: US medical aesthetics consumer spend (~$25B).[web:31]</li>
-    </ul>
-    <div class="chart-caption">Illustrative split of medspa revenues vs total aesthetics spend; not to scale.</div>
-  </div>
-
-  <div class="footer">Sources: TBRC, Research and Markets, industry reports, STOC analysis.[web:17][web:19][web:20][web:23][web:25]</div>
-</div>
-
-<!-- PAGE 3: FRAGMENTATION & STRUCTURE -->
-<div class="page">
-  <div class="logo">STOC</div>
-  <h2>2. Highly fragmented US landscape</h2>
-
-  <div class="section-title">A long tail of small independents</div>
-  <div class="two-col">
-    <div class="col">
-      <div class="chart">
-        <div class="chart-title">Exhibit 3 – US medspa market structure</div>
-        <ul>
-          <li>~10.5k medspa locations in 2023.[web:21][web:26]</li>
-          <li>~80–81% operate as single‑location practices.[web:7][web:26]</li>
-          <li>Only ~3% owned by private equity; remainder independent or physician‑owned.[web:26][web:33]</li>
-        </ul>
-        <div class="chart-caption">
-          Pie chart: single‑site vs multi‑site vs PE‑owned; bars for location count.[web:7][web:21][web:26][web:33]
-        </div>
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 8 – STOC workflow (illustrative)</div>
+        <p>Process flow: “Universe capture → Data enrichment → Scoring & segmentation → Target shortlists → Outreach support”.</p>
       </div>
     </div>
+  </div>
+
+  <div class="footer">
+    <span>STOC | Medspa Intelligence Platform</span>
+    <span>6</span>
+  </div>
+</div>
+
+<!-- PAGE 7: Data model & scoring framework -->
+<div class="page">
+  <h2>PE‑grade medspa scoring and segmentation</h2>
+  <p class="subtitle">From raw signals to an actionable ranking of medspa targets</p>
+
+  <div class="layout-2col">
     <div class="col">
+      <h3>Illustrative STOC medspa scorecard</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Example metrics</th>
+            <th>Weight (illustrative)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Digital demand</td>
+            <td>Monthly visits, IG followers, engagement, Google reviews count & rating.</td>
+            <td>35%</td>
+          </tr>
+          <tr>
+            <td>Clinical depth</td>
+            <td>MD oversight, advanced procedures, provider mix, treatment breadth.</td>
+            <td>25%</td>
+          </tr>
+          <tr>
+            <td>Scale & capacity</td>
+            <td>Location count, operating hours, chair/room proxy, booking availability.</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <td>Brand & reputation</td>
+            <td>Review score, review velocity, local ranking, content quality.</td>
+            <td>15%</td>
+          </tr>
+          <tr>
+            <td>Dealability</td>
+            <td>Age of brand, ownership type, potential for earn‑outs/roll‑over equity.</td>
+            <td>5%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        We combine these signals into a single **STOC MedSpa Index** per target, which can be filtered by geography, archetype, and investment thesis.
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Illustrative segmentation output</h3>
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 9 – Example STOC cluster view (dummy data)</div>
+        <p>Scatter chart concept: x‑axis = Digital score, y‑axis = Clinical depth; point size = estimated revenue proxy; color = platform vs. tuck‑in candidate.</p>
+      </div>
+
       <ul>
-        <li>Industry reviews show roughly 8–11k medspa locations nationwide, with the majority run as single‑site practices.[web:7][web:21][web:26][web:30]</li>
-        <li>Multi‑location operators are scaling quickly: recent reports show average locations per chain rising from low single digits to ~9 locations.[web:26][web:30]</li>
-        <li>Despite emerging platforms, approximately 80–90% of medspas remain non‑institutional, implying substantial runway for roll‑up strategies.[web:7][web:21][web:26][web:33]</li>
+        <li><span class="badge pill-green">Cluster A – Platform‑ready</span> Large digital and clinical scores; multi‑location; strong brand and MD oversight.</li>
+        <li><span class="badge">Cluster B – High‑growth tuck‑in</span> Strong digital signals but lighter clinical depth; ideal for platform uplift.</li>
+        <li><span class="badge">Cluster C – Value turnaround</span> Underperforming digital presence with adequate clinical capacity; upside from marketing and operations.</li>
       </ul>
+
+      <p>Deal teams can toggle filters (MSA, size, score bands) to quickly build actionable target lists aligned with specific fund strategies.</p>
     </div>
   </div>
 
-  <div class="section-title">Consolidation momentum, but early</div>
-  <ul>
-    <li>Recent surveys show multi‑site operators increasing their average footprint while overall M&amp;A volume is still perceived as “lower than potential,” pointing to a nascent consolidation wave.[web:26][web:30][web:33]</li>
-    <li>Scale players benefit from brand recognition, marketing efficiency, centralized procurement and shared clinical protocols, creating scope for multiple expansion versus stand‑alone clinics.[web:7][web:26][web:33]</li>
-  </ul>
-
-  <div class="chart">
-    <div class="chart-title">Exhibit 4 – Emergence of scaled chains</div>
-    <div class="value-bridge">
-      2022 average locations per chain: ~3 → 2023: ~9.[web:26][web:30]
-    </div>
-    <div class="chart-caption">
-      Illustrative line chart; based on reported average locations per multi‑site operator.[web:26][web:30]
-    </div>
+  <div class="footer">
+    <span>Weights, thresholds, and proxies to be calibrated jointly with the PE partner.</span>
+    <span>7</span>
   </div>
-
-  <div class="footer">Sources: DC Advisory, Hyde Park Capital, AmSpa, Greenwich, STOC analysis.[web:7][web:21][web:26][web:30]</div>
 </div>
 
-<!-- PAGE 4: PE DEMAND & THEMES -->
+<!-- PAGE 8: Illustrative market‑level exhibits -->
 <div class="page">
-  <div class="logo">STOC</div>
-  <h2>3. Private equity momentum</h2>
+  <h2>Examples of STOC‑powered market exhibits</h2>
+  <p class="subtitle">BCG/Bain‑style charts tailored to medspa deal teams</p>
 
-  <div class="section-title">Why medspas fit the PE playbook</div>
-  <ul>
-    <li>Cash‑pay revenue model with limited reimbursement risk and strong consumer willingness to pay for outcomes and experience.[web:10][web:31][web:33]</li>
-    <li>Recurring and subscription‑like revenue from injectables, skin maintenance and memberships, supporting predictable cohort economics.[web:10][web:31][web:33]</li>
-    <li>Unit‑driven growth: relatively modest capex per site, replicable clinical/operating model and clear levers across pricing, utilization and cross‑sell.[web:26][web:31][web:33]</li>
-  </ul>
+  <div class="layout-2col">
+    <div class="col">
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 10 – US medspa density vs. income (illustrative)</div>
+        <p>Bubble map or 2D plot: x‑axis = median household income by county; y‑axis = medspas per 100k adults; bubble size = population.</p>
+        <p>Highlights over‑served and under‑served pockets to guide market entry and density strategies.</p>
+      </div>
 
-  <div class="chart">
-    <div class="chart-title">Exhibit 5 – Selected PE platforms in medical aesthetics</div>
-    <table>
-      <tr>
-        <th>Example platform (illustrative)</th>
-        <th>Strategy</th>
-        <th>Focus</th>
-      </tr>
-      <tr>
-        <td>Dedicated medspa consolidators</td>
-        <td>Platform + tuck‑in</td>
-        <td>Regional density, brand building, network effects.[web:10][web:31]</td>
-      </tr>
-      <tr>
-        <td>Multi‑site physician groups</td>
-        <td>Ancillary aesthetics</td>
-        <td>Cross‑sell aesthetics into existing patient bases.[web:10][web:31]</td>
-      </tr>
-      <tr>
-        <td>Growth‑equity investors</td>
-        <td>De novo + digital</td>
-        <td>High‑growth chains, strong digital acquisition engines.[web:31][web:33]</td>
-      </tr>
-    </table>
-    <div class="chart-caption">
-      Not exhaustive; illustrative clusters based on recent medical aesthetics investment activity.[web:10][web:31][web:33]
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 11 – Digital maturity curve (illustrative)</div>
+        <p>Curve: rank medspas by digital score; show long tail of under‑optimized clinics. Segment into quartiles with different playbooks.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="section-title">Current constraints for investors</div>
-  <ul>
-    <li>Limited visibility into off‑market clinics and emerging operators, leading to auction‑driven processes and compressed returns.[web:7][web:26][web:33]</li>
-    <li>Pre‑LOI assessments often rely on high‑level financials without granular data on service mix, staffing profile or digital demand.</li>
-    <li>Post‑close, portfolio teams lack a consistent, external benchmark for digital performance and competitive intensity by micro‑market.</li>
-  </ul>
+    <div class="col">
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 12 – Service‑mix archetypes (illustrative)</div>
+        <p>Stacked bar chart: share of revenues (proxy) from injectables, skin rejuvenation, body contouring, wellness, other.[web:25][web:18]</p>
+        <p>Links service mix to unit economics and resilience in discretionary spending cycles.</p>
+      </div>
 
-  <div class="footer">Sources: American Medspa Association, Vector Medical Group, Physician Growth Partners, STOC analysis.[web:10][web:31][web:33]</div>
-</div>
-
-<!-- PAGE 5: UNIT ECONOMICS & VALUE CREATION -->
-<div class="page">
-  <div class="logo">STOC</div>
-  <h2>4. Medspa value‑creation levers</h2>
-
-  <div class="section-title">Attractive unit economics (illustrative)</div>
-  <ul>
-    <li>Typical medspa economics feature high gross margins on injectable and skincare services, offset by physician oversight and licensed staff costs.[web:10][web:30]</li>
-    <li>Labor productivity, room utilization and digital‑driven lead generation are key determinants of EBITDA per location.[web:10][web:30][web:33]</li>
-  </ul>
-
-  <div class="chart">
-    <div class="chart-title">Exhibit 6 – Illustrative value‑creation bridge per medspa</div>
-    <div class="value-bridge">
-      EBITDA today → +Volume/Utilization → +Service mix → +Pricing → +Procurement &amp; overhead → Platform synergies.
-    </div>
-    <ul>
-      <li><span class="pill">+Volume</span> Fill capacity via digital marketing, reviews and referral flywheel.</li>
-      <li><span class="pill">+Mix</span> Shift to higher‑margin injectables and packages.</li>
-      <li><span class="pill">+Price</span> Optimize price laddering by market positioning.</li>
-      <li><span class="pill">Cost</span> Centralize marketing, admin and purchasing.</li>
-    </ul>
-    <div class="chart-caption">
-      Illustrative; not based on any single operator. Actual margin uplift varies by site.[web:26][web:33]
-    </div>
-  </div>
-
-  <div class="section-title">Portfolio‑level upside</div>
-  <ul>
-    <li>Multi‑site platforms can capture marketing scale, centralized clinical training and better vendor economics, translating into higher sustainable EBITDA margins.[web:26][web:30][web:33]</li>
-    <li>Systematic site selection and pruning, informed by granular data on digital performance and staffing, can raise the portfolio’s average return on invested capital.</li>
-  </ul>
-
-  <div class="footer">Sources: AmSpa State of the Industry, Greenwich, Physician Growth Partners, STOC analysis.[web:26][web:30][web:33]</div>
-</div>
-
-<!-- PAGE 6: WHERE CURRENT APPROACHES FALL SHORT -->
-<div class="page">
-  <div class="logo">STOC</div>
-  <h2>5. Data gaps in current medspa investing</h2>
-
-  <div class="section-title">Fragmented information, limited comparability</div>
-  <ul>
-    <li>Location lists are incomplete and inconsistent, making it difficult to build a comprehensive, deduplicated map of the investable medspa universe.[web:7][web:21][web:26]</li>
-    <li>Digital presence (websites, social media, reviews) varies widely across clinics; without structured scraping and scoring, these signals remain qualitative and non‑comparable.</li>
-    <li>Staffing and clinical oversight data (MDs, NPs, injectors) are scattered across state registries, clinic bios and third‑party platforms, and rarely aggregated pre‑LOI.</li>
-  </ul>
-
-  <div class="chart">
-    <div class="chart-title">Exhibit 7 – Today’s view vs STOC’s view</div>
-    <table>
-      <tr>
-        <th>Dimension</th>
-        <th>Typical investor view</th>
-        <th>STOC data‑enhanced view</th>
-      </tr>
-      <tr>
-        <td>Universe coverage</td>
-        <td>Broker lists, ad‑hoc web search</td>
-        <td>Systematic crawl, deduped US medspa universe</td>
-      </tr>
-      <tr>
-        <td>Digital presence</td>
-        <td>Manual website/social check</td>
-        <td>Structured web quality, SEO and IG/follower scores</td>
-      </tr>
-      <tr>
-        <td>Clinical oversight</td>
-        <td>Limited MD visibility pre‑QofE</td>
-        <td>Linked MD/NP data and staffing footprints</td>
-      </tr>
-      <tr>
-        <td>Scalability</td>
-        <td>Qualitative judgment</td>
-        <td>Investability score by clinic and market</td>
-      </tr>
-    </table>
-    <div class="chart-caption">
-      Conceptual; actual STOC schema includes additional operational and market attributes.
-    </div>
-  </div>
-
-  <div class="section-title">Implications for PE funds</div>
-  <ul>
-    <li>Deal teams risk over‑paying for brand stories that lack operational depth, while overlooking smaller clinics with superior digital traction and staff productivity.</li>
-    <li>Without ongoing signal monitoring, it is difficult to spot emerging local leaders or early signs of underperformance across a portfolio.</li>
-  </ul>
-
-  <div class="footer">Sources: Industry reports cited earlier and STOC field work.[web:7][web:21][web:26]</div>
-</div>
-
-<!-- PAGE 7: STOC CAPABILITIES – DATA ENGINE -->
-<div class="page">
-  <div class="logo">STOC</div>
-  <h2>6. STOC: building a proprietary medspa data asset</h2>
-
-  <div class="section-title">End‑to‑end data pipeline</div>
-  <ul>
-    <li><b>Find</b>: Crawl and normalize the US medspa universe across business listings, practice sites, social profiles and industry sources.</li>
-    <li><b>Enrich</b>: Append structured attributes for services offered, pricing proxies, zip‑code demographics, MD affiliation, staffing footprint, online reviews and social reach.</li>
-    <li><b>Score</b>: Generate a multi‑factor investability score for each clinic, blending clinical, commercial and digital indicators into a consistent 1–100 index.</li>
-    <li><b>Signal</b>: Monitor time‑series changes in reviews, website quality, follower growth and hiring/job‑postings to flag emerging winners and early‑stage stress.</li>
-  </ul>
-
-  <div class="chart">
-    <div class="chart-title">Exhibit 8 – STOC medspa data architecture (simplified)</div>
-    <ul>
-      <li>Left: Raw data feeds (web, social, licensing, third‑party datasets).</li>
-      <li>Middle: Entity resolution, attribute extraction, quality checks.</li>
-      <li>Right: Investor‑ready outputs (target lists, scores, dashboards, CSV APIs).</li>
-    </ul>
-    <div class="chart-caption">
-      Designed to integrate into PE origination, diligence and portfolio reporting workflows.
-    </div>
-  </div>
-
-  <div class="section-title">Coverage and depth (illustrative placeholders)</div>
-  <div class="kpi-row">
-    <div class="kpi">
-      <div class="kpi-label">US locations tracked</div>
-      <div class="kpi-value">~X,XXX</div>
-      <div class="kpi-note">Share of estimated US medspa universe under active monitoring.</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Avg. attributes per clinic</div>
-      <div class="kpi-value">30+</div>
-      <div class="kpi-note">Digital, clinical, staffing and market indicators per entity.</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Update frequency</div>
-      <div class="kpi-value">Weekly</div>
-      <div class="kpi-note">Recrawl cadence for core digital and review signals.</div>
-    </div>
-  </div>
-
-  <div class="footer">For illustration; STOC to insert current coverage metrics.</div>
-</div>
-
-<!-- PAGE 8: STOC OUTPUTS & VISUALS -->
-<div class="page">
-  <div class="logo">STOC</div>
-  <h2>7. STOC outputs for deal teams</h2>
-
-  <div class="section-title">Origination – building proprietary pipelines</div>
-  <ul>
-    <li>Generate investable target lists within defined geographies and themes (e.g., injectables‑heavy clinics in high‑income suburbs) ranked by STOC score.</li>
-    <li>Overlay medspa density and score distributions on maps to identify whitespace markets and cluster‑build opportunities.</li>
-  </ul>
-
-  <div class="chart">
-    <div class="chart-title">Exhibit 9 – Illustrative STOC medspa score distribution</div>
-    <ul>
-      <li>X‑axis: STOC investability score deciles.</li>
-      <li>Y‑axis: Count of clinics per decile.</li>
-      <li>Highlight: top 2 deciles as high‑priority platform/tuck‑in candidates.</li>
-    </ul>
-    <div class="chart-caption">
-      Histogram showing concentration of high‑scoring clinics in selected states or MSAs.
-    </div>
-  </div>
-
-  <div class="section-title">Diligence and portfolio management</div>
-  <ul>
-    <li>Benchmark a target clinic’s digital footprint, review velocity and staffing mix against local and national peers to support underwriting and post‑acquisition plans.</li>
-    <li>Construct dashboards tracking portfolio clinics versus STOC’s external universe to prioritize interventions and bolt‑on sequencing.</li>
-  </ul>
-
-  <div class="chart">
-    <div class="chart-title">Exhibit 10 – Sample clinic comparison (anonymized)</div>
-    <table>
-      <tr>
-        <th>Clinic</th>
-        <th>MD presence</th>
-        <th>Staff count</th>
-        <th>IG followers</th>
-        <th>Review rating</th>
-        <th>STOC score</th>
-      </tr>
-      <tr>
-        <td>Clinic A</td>
-        <td>On‑site MD</td>
-        <td>12</td>
-        <td>18k</td>
-        <td>4.8 / 5</td>
-        <td>92</td>
-      </tr>
-      <tr>
-        <td>Clinic B</td>
-        <td>Supervising MD</td>
-        <td>7</td>
-        <td>4k</td>
-        <td>4.3 / 5</td>
-        <td>74</td>
-      </tr>
-    </table>
-    <div class="chart-caption">
-      Illustrative; STOC can tailor scoring weights to each investor’s thesis.
-    </div>
-  </div>
-
-  <div class="footer">All metrics for illustration only; STOC to populate with live data.</div>
-</div>
-
-<!-- PAGE 9: RISK, SCENARIOS & DISCIPLINE -->
-<div class="page">
-  <div class="logo">STOC</div>
-  <h2>8. Risk, scenarios and underwriting discipline</h2>
-
-  <div class="section-title">Key risk factors</div>
-  <ul>
-    <li><b>Regulatory and scope‑of‑practice</b>: Variation in supervision requirements and delegation rules by state; risk of enforcement tightening.[web:7][web:10]</li>
-    <li><b>Talent and staffing</b>: Competition for experienced injectors and medical directors; wage inflation and turnover affecting service capacity.[web:30][web:33]</li>
-    <li><b>Macro and discretionary spend</b>: Sensitivity to consumer confidence and interest rates, though recent periods show surprising resilience.[web:10][web:31]</li>
-  </ul>
-
-  <div class="section-title">Scenario framing (illustrative)</div>
-  <div class="chart">
-    <div class="chart-title">Exhibit 11 – Platform IRR / MOIC scenarios</div>
-    <ul>
-      <li>Downside: slower same‑store growth, muted multiple expansion.</li>
-      <li>Base: mid‑teens same‑store growth, modest multiple uplift from scale.</li>
-      <li>Upside: faster roll‑out and strong digital asset performance.</li>
-    </ul>
-    <div class="chart-caption">
-      Bar chart with 3 cases; STOC data improves confidence in base and downside assumptions by grounding inputs in asset‑level evidence.
-    </div>
-  </div>
-
-  <div class="section-title">How STOC mitigates risk</div>
-  <ul>
-    <li>Pre‑screening clinics for MD coverage, staffing depth and digital health reduces the risk of acquiring structurally weak assets.</li>
-    <li>Ongoing surveillance of reviews, hiring and digital reach allows earlier detection of performance drift, supporting more timely operational interventions.</li>
-  </ul>
-
-  <div class="footer">Conceptual scenario analysis; investors to overlay fund‑specific hurdle rates.</div>
-</div>
-
-<!-- PAGE 10: WHY STOC, WHY NOW -->
-<div class="page">
-  <div class="logo">STOC</div>
-  <h2>9. Why STOC is a strategic partner for medspa investing</h2>
-
-  <div class="section-title">Differentiated edge for PE funds</div>
-  <ul>
-    <li>STOC converts a fragmented, opaque medspa landscape into a structured investing universe with clinic‑level scores and digital signals.</li>
-    <li>This enables earlier identification of platform‑worthy operators, disciplined valuation of targets and more targeted post‑close value‑creation playbooks.</li>
-  </ul>
-
-  <div class="section-title">How STOC works with your team</div>
-  <ul>
-    <li><b>Origination support</b>: Themed target lists, heatmaps and scorecards aligned to your investment thesis (geography, service mix, acuity).</li>
-    <li><b>Diligence support</b>: Rapid, data‑driven views on target positioning vs local and national peers, including digital performance and staffing patterns.</li>
-    <li><b>Portfolio support</b>: External benchmarking and early‑warning signals to focus operating resources where value‑at‑risk is highest.</li>
-  </ul>
-
-  <div class="section-title">Next steps</div>
-  <ul>
-    <li>Co‑define medspa investing thesis (segments, regions, deal size) and calibrate STOC scoring methodology.</li>
-    <li>Deliver an initial opportunity scan (e.g., top 200 clinics by STOC score in priority markets) within a defined time frame.</li>
-    <li>Integrate STOC feeds into your deal screening and IC materials for the first medspa platform or bolt‑on opportunity.</li>
-  </ul>
-
-  <div class="footer">Contact STOC for a live demo, sample medspa scorecards and pilot engagement details.</div>
-</div>
-
-</body>
-</html>
+      <div class="chart-box">
+        <div class="chart-title">Exhibit 13 – Scenario views (illustrative)</div>
+        <p>Bridge charts: Base 
